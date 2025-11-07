@@ -7,29 +7,23 @@ This repository contains the implementation and explanation for optimizing the u
 The goal is to minimize the L1 distance between the predicted curve points and the observed data points provided in `xy_data.csv`.
 
 ---
+## Problem Definition
 
 ## Problem Definition
 
 The parametric equations are given as:
 
-[
-\begin{aligned}
-x(t) &= t \cos(\theta) - e^{M|t|} \sin(0.3t) \sin(\theta) + X \
-y(t) &= 42 + t \sin(\theta) + e^{M|t|} \sin(0.3t) \cos(\theta)
-\end{aligned}
-]
+x(t) = t*cos(theta) - exp(M*abs(t))*sin(0.3*t)*sin(theta) + X, y(t) = 42 + t*sin(theta) + exp(M*abs(t))*sin(0.3*t)*cos(theta)
+
+
 
 ### Given Parameter Ranges:
 
-[
-0^\circ < \theta < 50^\circ, \quad -0.05 < M < 0.05, \quad 0 < X < 100, \quad 6 < t < 60
-]
+0° < theta < 50°,   -0.05 < M < 0.05,   0 < X < 100,   6 < t < 60
 
 The objective is to minimize the L1 distance between the predicted and observed data points:
 
-[
-J(\theta, M, X) = \frac{1}{N} \sum_{i=1}^{N} (|x_i - x(t_i)| + |y_i - y(t_i)|)
-]
+J(theta, M, X) = (1/N) * sum_{i=1..N} ( |x_i - x(t_i)| + |y_i - y(t_i)| )
 
 ---
 
