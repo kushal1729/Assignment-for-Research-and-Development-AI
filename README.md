@@ -33,6 +33,20 @@ J(\theta, M, X) = \frac{1}{N} \sum_{i=1}^{N} (|x_i - x(t_i)| + |y_i - y(t_i)|)
 
 ---
 
+## Justification for Choosing t ∈ [6, 60]
+
+The dataset does not explicitly provide the corresponding parameter `t` values for each (x, y) point. However, the problem statement specifies that the data corresponds to the range **6 < t < 60**. This indicates that the curve is defined and observed over this interval.
+
+To ensure a consistent and fair comparison between predicted and actual data points, we assume that:
+
+* The dataset points are sampled sequentially from the same curve within the given range.
+* Uniformly distributing `t` values between 6 and 60 maintains a one-to-one mapping between observed points and parameter values.
+* This uniform assumption is reasonable because no evidence of irregular sampling or missing intervals is provided.
+
+Thus, the choice of **t ∈ [6, 60]** ensures the model accurately represents the domain over which the data was generated.
+
+---
+
 ## Approach
 
 1. **Data Preparation:**
@@ -136,5 +150,4 @@ Interactive Desmos graph of the optimized curve:
 
 ## Citation
 
-> Differential Evolution algorithm implementation from SciPy: `scipy.optimize.differential_evolution`.
-> Reference: Virtanen, P. & Gommers, Ralf & Oliphant, T.E. & Haberland, M. & Reddy, T. & Cournapeau, D. & Burovski, E. & Peterson, Pearu & Weckesser, W. & Bright, Jonathan & Walt, S.J. & Brett, Matthew & Wilson, J. & Millman, K.J. & Mayorov, N. & Nelson, A.R.J. & Jones, E. & Kern, R. & Larson, E. & SciPy, Contributors. (2020). Author Correction: SciPy 1.0: fundamental algorithms for scientific computing in Python (Nature Methods, (2020), 17, 3, (261-272), 10.1038/s41592-019-0686-2). 
+> Virtanen, P., Gommers, R., Oliphant, T. E., Haberland, M., Reddy, T., Cournapeau, D., Burovski, E., Peterson, P., Weckesser, W., Bright, J., van der Walt, S. J., Brett, M., Wilson, J., Millman, K. J., Mayorov, N., Nelson, A. R. J., Jones, E., Kern, R., Larson, E., ... SciPy 1.0 Contributors. (2020). *SciPy 1.0: Fundamental algorithms for scientific computing in Python*. *Nature Methods*, 17(3), 261–272. [https://doi.org/10.1038/s41592-019-0686-2](https://doi.org/10.1038/s41592-019-0686-2)
